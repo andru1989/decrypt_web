@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-xs-6">
+
+    <div class="page-header">
+      <h2>Encrypt</h2>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%= form_for :encrypt do |f| %>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= f.label :message %>
+              <%= f.text_area :message, rows: 4, class: 'form-control' %>
+            </div>
+
+            <div class="col-xs-12">
+              <%= f.label :message_encrypted %>
+              <%= f.text_area :message_encrypted, rows: 4,class: 'form-control', readonly: true %>
+            </div>
+
+            <div class="col-xs-12">
+              <%= f.label :key %>
+              <%= f.text_area :key, rows: 4, class: 'form-control', readonly: true %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-xs-6">
+
+    <div class="page-header">
+      <h2>Decrypt</h2>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%= form_for :decrypt do |f| %>
+          <div class="row">
+
+            <div class="col-xs-12">
+              <%= f.label :encrypted_message %>
+              <%= f.text_area :encrypted_message, rows: 4, class: 'form-control' %>
+            </div>
+
+            <div class="col-xs-12">
+              <%= f.label :key %>
+              <%= f.text_area :key, rows: 4, class: 'form-control' %>
+            </div>
+
+            <div class="col-xs-12">
+              <%= f.label :decrypted_message %>
+              <%= f.text_area :decrypted_message, rows: 4, class: 'form-control', readonly: true %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
